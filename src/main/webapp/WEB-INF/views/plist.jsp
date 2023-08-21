@@ -12,7 +12,7 @@
 <section>
 <h2>환자조회</h2>
 <form>
-<table border="1">
+<table border="1" class="table table-striped">
 <tr>
 <td>환자번호</td>
 <td>환자성명</td>

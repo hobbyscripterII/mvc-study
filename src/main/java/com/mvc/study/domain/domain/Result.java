@@ -20,4 +20,5 @@ public class Result {
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date t_ldate;
 	private String t_result;
+	private int p_maxNo;
 }

@@ -11,7 +11,6 @@ import com.mvc.study.web.domain.ResultListForm;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
 @Service
 @RequiredArgsConstructor
 public class ResultService {
@@ -22,7 +21,6 @@ public class ResultService {
 	}
 	
 	public List<ResultListForm> selectResultAll() {
-		log.info("result = {}", resultMapper.selectResultAll());
 		return resultMapper.selectResultAll();
 	}
 }

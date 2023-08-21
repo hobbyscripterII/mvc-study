@@ -8,21 +8,29 @@ import com.mvc.study.domain.domain.Patient;
 import com.mvc.study.domain.mapper.PatientMapper;
 
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
 @Service
 @RequiredArgsConstructor
 public class PatientService {
 	private final PatientMapper patientMapper;
 	
+	public void insertPatient(Patient patient) {
+		patientMapper.insertPatient(patient);
+	}
+	
 	public List<Patient> selectAllPatient() {
-		log.info("patient = {}", patientMapper.selectAllPatient());
 		return patientMapper.selectAllPatient();
 	}
 	
 	public List<Patient> selectCityTestCnt() {
-		log.info("cityTestCnt = {}", patientMapper.selectCityTestCnt());
 		return patientMapper.selectCityTestCnt();
+	}
+	
+	public int SelectPmaxNo() {
+		return patientMapper.selectPMaxNo();
+	}
+	
+	public List<Patient> selectPNo() {
+		return patientMapper.selectPNo();
 	}
 }

@@ -13,7 +13,7 @@
 <section>
 <h2>검사결과조회</h2>
 <form>
-<table border="1">
+<table border="1" class="table table-striped">
 <tr>
 <td>환자번호</td>
 <td>환자명</td>

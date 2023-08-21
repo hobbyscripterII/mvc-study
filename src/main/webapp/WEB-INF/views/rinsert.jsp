@@ -11,15 +11,21 @@
 
 <section>
 <h2>검사결과입력</h2>
-<form name="frm" action="result" method="post">
-<table border="1">
+<form name="frm" action="r-result" method="post">
+<table border="1" class="table table-striped">
 <tr>
 <td>환자번호</td>
-<td><input type="number" name="p_no" /> 예)1001</td>
+<td class="input-td">
+<select name="p_no">
+	<c:forEach var="list" items="${list}">
+		<option value="${list.p_no}"><c:out value="${list.p_no}" /></option>
+	</c:forEach>
+</select>
+</td>
 </tr>
 <tr>
 <td>검사코드</td>
-<td>
+<td class="input-td">
 	<select name="t_code">
 		<option value="null">검사명</option>
 		<option value="T001" >[T001]결핵</option>
@@ -32,22 +38,22 @@
 </tr>
 <tr>
 <td>검사시작일자</td>
-<td><input type="date" name="t_sdate" />예)20200101</td>
+<td class="input-td"><input type="date" name="t_sdate" />예)20200101</td>
 </tr>
 <tr>
 <td>검사상태</td>
-<td>
+<td class="input-td">
 <input type="radio" name="t_status" value="1" />검사중
 <input type="radio" name="t_status" value="2" />검사완료
 </td>
 </tr>
 <tr>
 <td>검사완료일자</td>
-<td><input type="date" name="t_ldate" />예)20200101</td>
+<td class="input-td"><input type="date" name="t_ldate" />예)20200101</td>
 </tr>
 <tr>
 <td>검사결과</td>
-<td>
+<td class="input-td">
 <input type="radio" name="t_result" value="X" />미입력
 <input type="radio" name="t_result" value="P" />양성
 <input type="radio" name="t_result" value="N" />음성
@@ -55,8 +61,8 @@
 </tr>
 <tr>
 <td colspan="2">
-<input type="button" value="검사결과등록" onclick="check()">
-<input type="button" value="다시쓰기" onclick="reset()">
+<input type="button" class="btn btn-primary" value="검사결과등록" onclick="check()">
+<input type="button" class="btn btn-primary" value="다시쓰기" onclick="reset()">
 </td>
 </tr>
 </table>

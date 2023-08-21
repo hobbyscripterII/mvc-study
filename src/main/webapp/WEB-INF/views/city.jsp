@@ -12,7 +12,7 @@
 <section>
 <h2>(지역별)검사건수통계</h2>
 <form>
-<table border="1">
+<table border="1" class="table table-striped">
 <tr>
 <td>지역코드</td>
 <td>지역</td>
