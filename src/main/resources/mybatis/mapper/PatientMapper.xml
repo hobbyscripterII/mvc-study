@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mvc.study.domain.mapper.PatientMapper">
+	<select id="selectAllPatient" resultType="com.mvc.study.domain.domain.Patient">
+	<![CDATA[
+	select p_no, p_name,
+	substr(p_birth,1,4)||'년'||substr(p_birth,5,2)||'월'||substr(p_birth,7,2)||'일' as p_birth,
+	case p_gender when 'M' then '남' else '여' end as p_gender,
+	p_tel1||'-'||p_tel2||'-'||p_tel3 as p_phone from tbl_patient_202004 p
+	]]>
+	</select>
+	
+	<select id="selectCityTestCnt" resultType="com.mvc.study.domain.domain.Patient">
+	<![CDATA[
+	select p_city,
+	case p_city when '10' then '서울' when '20' then '경기' when '30' then '강원' when '40' then '대구' end as p_cityName,
+	count(p_city) as p_cityCnt
+	from tbl_patient_202004 group by p_city order by p_city
+	]]>
+	</select>
+</mapper>

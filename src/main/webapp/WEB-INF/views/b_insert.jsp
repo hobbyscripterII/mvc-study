@@ -1,17 +1,18 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript" src="check.js"></script>
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
 
 <section>
 <h2>검사결과입력</h2>
-<form name="frm" action="result" method="post">
+<form name="frm" action="action.jsp" method="post">
 <table border="1">
 <tr>
 <td>환자번호</td>
@@ -32,7 +33,7 @@
 </tr>
 <tr>
 <td>검사시작일자</td>
-<td><input type="date" name="t_sdate" />예)20200101</td>
+<td><input type="number" name="t_sdate" />예)20200101</td>
 </tr>
 <tr>
 <td>검사상태</td>
@@ -43,7 +44,7 @@
 </tr>
 <tr>
 <td>검사완료일자</td>
-<td><input type="date" name="t_ldate" />예)20200101</td>
+<td><input type="number" name="t_ldate" />예)20200101</td>
 </tr>
 <tr>
 <td>검사결과</td>
@@ -64,31 +65,5 @@
 </section>
 
 <jsp:include page="footer.jsp"></jsp:include>
-
-<script type="text/javascript">
-function check() {
-	if(!frm.p_no.value) {
-		alert("환자번호가 입력되지 않았습니다!");
-	} else if(frm.t_code.value == "null") {
-		alert("검사코드가 선택되지 않았습니다!");
-	} else if(!frm.t_sdate.value) {
-		alert("검사시작일자가 입력되지 않았습니다!");
-	} else if(frm.t_status[0].checked == false && frm.t_status[1].checked == false) {
-		alert("검사상태가 선택되지 않았습니다!");
-	} else if(!frm.t_ldate.value) {
-		alert("검사완료일자가 입력되지 않았습니다!");
-	} else if(frm.t_result[0].checked == false && frm.t_result[1].checked == false && frm.t_result[2].checked == false) {
-		alert("검사결과가 선택되지 않았습니다!");
-	} else {
-		alert("검사결과가 정상적으로 등록되었습니다!");
-		document.frm.submit();
-	}
-}
-
-function reset() {
-	alert("정보를 지우고 처음부터 다시 입력합니다!");
-	document.frm.reset();
-}
-</script>
 </body>
 </html>

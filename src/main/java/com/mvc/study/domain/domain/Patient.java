@@ -8,10 +8,16 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Patient {
-	private long pno; // 환자 번호
-	private String tcode; // 검사명
-	private int tsdate; // 검사 시작일자
-	private int tldate; // 검사 완료일자
-	private char tstatus; // 검사 상태
-	private char tresult; // 검사 결과
+	private int p_no;
+	private String p_name;
+	private String p_birth;
+	private String p_gender;
+	private String p_phone; // p_tel1 + p_tel2 + p_tel3
+	private int p_tel1;
+	private int p_tel2;
+	private int p_tel3;
+	private int p_city;
+	
+	private int p_cityCnt;
+	private String p_cityName;
 }

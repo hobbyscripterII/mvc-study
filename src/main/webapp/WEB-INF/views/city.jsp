@@ -1,9 +1,5 @@
-<%@page import="java.sql.ResultSet"%>
-<%@page import="javax.naming.spi.DirStateFactory.Result"%>
-<%@page import="java.sql.PreparedStatement"%>
-<%@ include file="DB.jsp" %>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,38 +15,16 @@
 <table border="1">
 <tr>
 <td>지역코드</td>
-<td>지역일</td>
+<td>지역</td>
 <td>검사건수</td>
 </tr>
-<%
-request.setCharacterEncoding("UTF-8");
-try {
-	String sql = "select p_city, count(p_city) from tbl_patient_202004 group by p_city order by p_city";
-	PreparedStatement pstmt = c.prepareStatement(sql);
-	ResultSet rs = pstmt.executeQuery();
-	while(rs.next()) {
-		String city = rs.getString(1);
-		if(city.equals("10")) {
-			city = "서울";
-		} else if(city.equals("20")) {
-			city = "경기";
-		} else if(city.equals("30")) {
-			city = "강원";
-		} else {
-			city = "대구";
-		}
-%>
+<c:forEach var="c" items="${cnt}">
 <tr>
-<td><%=rs.getString(1) %></td>
-<td><%=city %></td>
-<td><%=rs.getString(2) %></td>
+<td><c:out value="${c.p_city}"></c:out></td>
+<td><c:out value="${c.p_cityName}"></c:out></td>
+<td><c:out value="${c.p_cityCnt}"></c:out></td>
 </tr>
-<%
-	}
-} catch(Exception e) {
-	e.printStackTrace();
-}
-%>
+</c:forEach>
 </table>
 </form>
 </section>
