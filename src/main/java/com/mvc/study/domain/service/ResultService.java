@@ -2,7 +2,6 @@ package com.mvc.study.domain.service;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.mvc.study.domain.domain.Result;
@@ -16,10 +15,7 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 @RequiredArgsConstructor
 public class ResultService {
-	@Autowired	ResultMapper resultMapper;
-	
-	private final static ResultService instance = new ResultService();
-	public ResultService getInstance() {return instance;}
+	private final ResultMapper resultMapper;
 
 	public void insertResult(Result result) {
 		resultMapper.insertResult(result);

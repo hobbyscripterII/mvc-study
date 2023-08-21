@@ -12,12 +12,12 @@ public class Patient {
 	private String p_name;
 	private String p_birth;
 	private String p_gender;
-	private String p_phone; // p_tel1 + p_tel2 + p_tel3
 	private int p_tel1;
 	private int p_tel2;
 	private int p_tel3;
 	private int p_city;
 	
+	private String p_phone; // p_tel1 + p_tel2 + p_tel3
 	private int p_cityCnt;
 	private String p_cityName;
 }

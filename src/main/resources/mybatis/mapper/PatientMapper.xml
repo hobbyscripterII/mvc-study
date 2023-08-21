@@ -4,7 +4,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.mvc.study.domain.mapper.PatientMapper">
-	<select id="selectAllPatient" resultType="com.mvc.study.domain.domain.Patient">
+	<select id="selectAllPatient" resultType="Patient">
 	<![CDATA[
 	select p_no, p_name,
 	substr(p_birth,1,4)||'년'||substr(p_birth,5,2)||'월'||substr(p_birth,7,2)||'일' as p_birth,

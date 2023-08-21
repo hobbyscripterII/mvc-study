@@ -4,13 +4,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.mvc.study.domain.mapper.ResultMapper">
-	<insert id="insertResult" parameterType="com.mvc.study.domain.domain.Result" >
+	<insert id="insertResult" parameterType="Result" >
 	<![CDATA[
 	insert into tbl_result_202004 values(#{p_no}, #{t_code}, #{t_sdate}, #{t_status}, #{t_ldate}, #{t_result})
 	]]>
 	</insert>
 	
-	<select id="selectResultAll" resultType="com.mvc.study.web.domain.ResultListForm">
+	<select id="selectResultAll" resultType="ResultListForm">
 	<![CDATA[
 	select p.p_no as p_no, p.p_name as p_name, l.t_name as t_name, t_sdate as t_sdate, t_ldate as t_ldate,
 	case r.t_status when '1' then '검사중' when '2' then '검사완료' end as t_status,

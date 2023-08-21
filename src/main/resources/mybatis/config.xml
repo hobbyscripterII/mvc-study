@@ -5,7 +5,8 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 
 <configuration>
 	<typeAliases>
-		<typeAlias type="com.mvc.study.domain.mapper.ResultMapper" alias="ResultMapper" />
-		<typeAlias type="com.mvc.study.domain.mapper.PatientMapper" alias="PatientMapper" />
+		<typeAlias type="com.mvc.study.domain.domain.Result" alias="Result" />
+		<typeAlias type="com.mvc.study.domain.domain.Patient" alias="Patient" />
+		<typeAlias type="com.mvc.study.web.domain.ResultListForm" alias="ResultListForm" />
 	</typeAliases>
 </configuration>
