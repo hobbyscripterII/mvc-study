@@ -8,5 +8,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<typeAlias type="com.mvc.study.domain.domain.Result" alias="Result" />
 		<typeAlias type="com.mvc.study.domain.domain.Patient" alias="Patient" />
 		<typeAlias type="com.mvc.study.web.domain.ResultListForm" alias="ResultListForm" />
+		<typeAlias type="com.mvc.study.web.domain.PatientListForm" alias="PatientListForm" />
 	</typeAliases>
 </configuration>

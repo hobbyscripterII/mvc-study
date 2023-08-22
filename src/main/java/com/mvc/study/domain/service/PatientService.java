@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.mvc.study.domain.domain.Patient;
 import com.mvc.study.domain.mapper.PatientMapper;
+import com.mvc.study.web.domain.PatientListForm;
 
 import lombok.RequiredArgsConstructor;
 
@@ -18,11 +19,11 @@ public class PatientService {
 		patientMapper.insertPatient(patient);
 	}
 	
-	public List<Patient> selectAllPatient() {
+	public List<PatientListForm> selectAllPatient() {
 		return patientMapper.selectAllPatient();
 	}
 	
-	public List<Patient> selectCityTestCnt() {
+	public List<PatientListForm> selectCityTestCnt() {
 		return patientMapper.selectCityTestCnt();
 	}
 	
@@ -32,5 +33,9 @@ public class PatientService {
 	
 	public List<Patient> selectPNo() {
 		return patientMapper.selectPNo();
+	}
+	
+	public List<PatientListForm> selectCityTest() {
+		return patientMapper.selectCityTest();
 	}
 }

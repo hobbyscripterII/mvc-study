@@ -9,7 +9,6 @@ import com.mvc.study.domain.mapper.ResultMapper;
 import com.mvc.study.web.domain.ResultListForm;
 
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 
 @Service
 @RequiredArgsConstructor

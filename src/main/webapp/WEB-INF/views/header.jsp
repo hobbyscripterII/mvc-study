@@ -10,7 +10,7 @@
 </head>
 <body>
 <header>
-더블유병원 환자 관리 페이지
+<a href="<c:url value="/" />">더블유병원 환자 관리 페이지</a>
 </header>
 <nav>
 <a href="<c:url value="/" />">홈으로</a> &nbsp; &nbsp;

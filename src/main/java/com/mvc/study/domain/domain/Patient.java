@@ -1,12 +1,10 @@
 package com.mvc.study.domain.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
+@Getter
+@Setter
 public class Patient {
 	private int p_no;
 	private String p_name;
@@ -16,9 +14,4 @@ public class Patient {
 	private String p_tel2;
 	private String p_tel3;
 	private int p_city;
-	
-	private String p_phone; // p_tel1 + p_tel2 + p_tel3
-	private int p_cityCnt;
-	private String p_cityName;
-	private int p_maxNo;
 }

@@ -20,21 +20,31 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	]]>	
 	</select>
 
-	<select id="selectAllPatient" resultType="Patient">
+	<select id="selectAllPatient" resultType="PatientListForm">
 	<![CDATA[
 	select p_no, p_name,
 	substr(p_birth,1,4)||'년'||substr(p_birth,5,2)||'월'||substr(p_birth,7,2)||'일' as p_birth,
 	case p_gender when 'M' then '남' else '여' end as p_gender,
-	p_tel1||'-'||p_tel2||'-'||p_tel3 as p_phone from tbl_patient_202004 p
+	p_tel1||'-'||p_tel2||'-'||p_tel3 as p_phone
+	from tbl_patient_202004 p
+	order by p_no
 	]]>
 	</select>
 	
-	<select id="selectCityTestCnt" resultType="Patient">
+	<select id="selectCityTestCnt" resultType="PatientListForm">
 	<![CDATA[
 	select p_city,
 	case p_city when '10' then '서울' when '20' then '경기' when '30' then '강원' when '40' then '대구' end as p_cityName,
 	count(p_city) as p_cityCnt
 	from tbl_patient_202004 group by p_city order by p_city
+	]]>
+	</select>
+	
+	<select id="selectCityTest" resultType="PatientListForm">
+	<![CDATA[
+	select p_city,
+	case p_city when '10' then '서울' when '20' then '경기' when '30' then '강원' when '40' then '대구' end as p_cityName
+	from tbl_patient_202004
 	]]>
 	</select>
 </mapper>
