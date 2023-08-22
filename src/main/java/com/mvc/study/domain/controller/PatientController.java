@@ -14,7 +14,6 @@ import com.mvc.study.domain.domain.Patient;
 import com.mvc.study.domain.service.PatientService;
 import com.mvc.study.web.domain.InsertPatient;
 import com.mvc.study.web.domain.PatientListForm;
-import com.mvc.study.web.domain.ResultListForm;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -26,12 +25,12 @@ public class PatientController {
 	private final PatientService patientService;
 	
 	@GetMapping("/p-insert")
-	public String insertPatient(@ModelAttribute InsertPatient insertPatient, Model model) {
+	public String insertPatient(Model model) {
 		int p_maxNo = patientService.SelectPmaxNo();
 		List<PatientListForm> p_city = patientService.selectCityTest();
 		model.addAttribute("pmaxno", p_maxNo);
 		model.addAttribute("p_city", p_city);
-		model.addAttribute("insertPatient", insertPatient);
+		model.addAttribute("insertPatient", new InsertPatient());
 		return "pinsert";
 	}
 	

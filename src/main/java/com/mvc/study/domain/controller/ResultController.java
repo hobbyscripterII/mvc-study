@@ -16,6 +16,7 @@ import com.mvc.study.domain.domain.Result;
 import com.mvc.study.domain.service.PatientService;
 import com.mvc.study.domain.service.ResultService;
 import com.mvc.study.web.domain.InsertResult;
+import com.mvc.study.web.domain.PatientListForm;
 import com.mvc.study.web.domain.ResultListForm;
 
 import lombok.RequiredArgsConstructor;
@@ -39,8 +40,8 @@ public class ResultController {
 	@PostMapping("/r-result")
 	public String insertForm(@Valid @ModelAttribute InsertResult insertResult, BindingResult bindingResult, Model model) {
 		if(bindingResult.hasErrors()) {
-			List<Patient> list = patientService.selectPNo();
-			model.addAttribute("list", list);
+			List<Patient> pno = patientService.selectPNo();
+			model.addAttribute("pno", pno);
 			log.info("binfingResult = {}", bindingResult);
 			return "rinsert";
 		} else {

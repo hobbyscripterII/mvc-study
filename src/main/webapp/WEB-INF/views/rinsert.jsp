@@ -31,9 +31,11 @@
 <td class="input-td">
 	<form:select path="t_code" name="t_code" style="width: 220px">
 		<option value=" ">검사코드</option>
-		<c:forEach var="p_city" items="${p_city}">
-		<option value="${p_city.p_citycode}" ><c:out value="${p_city.p_city}" /></option>
-		</c:forEach>
+		<option value="T001" >[T001]결핵</option>
+		<option value="T002" >[T002]장티푸스</option>
+		<option value="T003" >[T003]수두</option>
+		<option value="T004" >[T004]홍역</option>
+		<option value="T005" >[T005]콜레라</option>
 	</form:select>
 	<form:errors path="t_code" cssClass="errors-class input-w" />
 </td>

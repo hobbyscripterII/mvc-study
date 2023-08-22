@@ -14,6 +14,7 @@
 </header>
 <nav>
 <a href="<c:url value="/" />">홈으로</a> &nbsp; &nbsp;
+<a href="login">로그인</a> &nbsp; &nbsp;
 <a href="p-insert">환자 등록</a> &nbsp; &nbsp;
 <a href="p-list">환자 조회</a> &nbsp; &nbsp;
 <a href="insert">검사 결과 등록</a> &nbsp; &nbsp;

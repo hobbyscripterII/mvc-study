@@ -76,27 +76,6 @@
 <jsp:include page="footer.jsp"></jsp:include>
 
 <script type="text/javascript">
-<!--
-function check() {
-	if(!frm.p_tel1.value) {
-		alert("전화번호가 입력되지 않았습니다!")
-		frm.p_tel1.focus();
-		return false;
-	} else if(!frm.p_tel2.value) {
-		alert("전화번호가 입력되지 않았습니다!")
-		frm.p_tel2.focus();
-		return false;
-	} else if(!frm.p_tel3.value) {
-		alert("전화번호가 입력되지 않았습니다!")
-		frm.p_tel3.focus();
-		return false;
-	} else {
-		frm.submit();
-		return true;
-	}
-}
--->
-	
 function reset() {
 	alert("정보를 지우고 처음부터 다시 입력합니다!");
 	document.frm.reset();
